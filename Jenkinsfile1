@@ -8,11 +8,11 @@ pipeline {
         sh 'echo Welcome to Stage One'
       }
     }
-  }
 
-  stage('Two') {
-    steps {
-      sh 'echo Welcome to Stage Two'
+    stage('Two') {
+      steps {
+        sh 'echo Welcome to Stage Two'
+      }
     }
   }
   
