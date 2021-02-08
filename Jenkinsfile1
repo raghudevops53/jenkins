@@ -20,8 +20,11 @@ pipeline {
     }
 
     stage('Threee') {
+      environment {
+        URL1 = "yahoo.com"
+      }
       steps  {
-        sh 'echo Welcome to Stage Three'
+        sh 'echo URL = ${URL}'
       }
     }
 
