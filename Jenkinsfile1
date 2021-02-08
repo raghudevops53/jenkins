@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  environment {
+    URL="google.com"
+  }
+
   stages {
 
     stage('One') {
