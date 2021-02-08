@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    URL="google.com"
+    URL = "google.com"
   }
 
   stages {
