@@ -24,7 +24,7 @@ pipeline {
         URL1 = "yahoo.com"
       }
       steps  {
-        sh 'echo URL = ${URL}'
+        sh 'echo URL = ${URL1}'
       }
     }
 
