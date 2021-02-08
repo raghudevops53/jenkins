@@ -9,7 +9,7 @@ pipeline {
 
     stage('One') {
       steps {
-        sh 'echo Welcome to Stage One'
+        sh 'echo URL=${URL}'
       }
     }
 
