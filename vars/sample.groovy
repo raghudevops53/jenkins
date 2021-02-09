@@ -6,17 +6,19 @@ def warning(message) {
   echo "WARNING: ${message}"
 }
 
-pipeline {
-  agent any
+def terraform() {
+  pipeline {
+    agent any
 
-  stages {
+    stages {
 
-    stage('Shared Library Demo') {
-      steps {
-        script {
-          print 'hello'
-          sample.info 'Starting'
-          sample.warning 'Nothing to do!'
+      stage('Shared Library Demo') {
+        steps {
+          script {
+            print 'hello'
+            sample.info 'Starting'
+            sample.warning 'Nothing to do!'
+          }
         }
       }
     }
