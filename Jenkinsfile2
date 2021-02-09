@@ -6,8 +6,12 @@ pipeline {
   stages {
 
     stage('Shared Library Demo') {
-        log.info 'Starting'
-        log.warning 'Nothing to do!'
+      steps {
+        script {
+          log.info 'Starting'
+          log.warning 'Nothing to do!'
+        }
+      }
     }
   }
 }
