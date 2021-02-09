@@ -3,17 +3,3 @@
 log.info 'Starting'
 log.warning 'Nothing to do!'
 
-pipeline {
-  agent any
-
-  stages {
-
-    stage('Shared Library Demo') {
-      steps {
-        script {
-          print 'hello'
-        }
-      }
-    }
-  }
-}
