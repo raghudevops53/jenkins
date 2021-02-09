@@ -1,5 +1,8 @@
 @Library('roboshop') _
 
+log.info 'Starting'
+log.warning 'Nothing to do!'
+
 pipeline {
   agent any
 
@@ -8,8 +11,7 @@ pipeline {
     stage('Shared Library Demo') {
       steps {
         script {
-          log.info 'Starting'
-          log.warning 'Nothing to do!'
+          print 'hello'
         }
       }
     }
