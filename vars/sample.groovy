@@ -16,8 +16,6 @@ def terraform() {
         steps {
           script {
             print 'hello'
-            sample.info 'Starting'
-            sample.warning 'Nothing to do!'
           }
         }
       }
