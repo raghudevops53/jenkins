@@ -7,6 +7,10 @@ def call(String action) {
         terraform 'terraform14'
       }
 
+      environment {
+        AWS = credentials('AWS')
+      }
+
       parameters {
         choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick Environment')
       }
