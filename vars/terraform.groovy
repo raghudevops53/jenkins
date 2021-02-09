@@ -3,6 +3,13 @@ def call(String action) {
     pipeline {
       agent any
 
+      tools {
+        terraform 'terraform14'
+      }
+
+      parameters {
+        choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick something')
+      }
       stages {
 
         stage('INIT') {
