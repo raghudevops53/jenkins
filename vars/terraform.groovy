@@ -8,7 +8,7 @@ def call(String action) {
       }
 
       parameters {
-        choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick something')
+        choice(name: 'ENVIRONMENT', choices: ['', 'dev', 'prod'], description: 'Pick Environment')
       }
       stages {
 
@@ -17,7 +17,7 @@ def call(String action) {
             sh '''
               export AWS_ACCESS_KEY_ID=${AWS_USR}
               export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
-              make dev-init
+              make ${ENVIRONMENT}-init
             '''
           }
         }
@@ -26,7 +26,7 @@ def call(String action) {
             sh '''
               export AWS_ACCESS_KEY_ID=${AWS_USR}
               export AWS_SECRET_ACCESS_KEY=${AWS_PSW}
-              make dev-apply
+              make ${ENVIRONMENT}-apply
             '''
           }
         }
