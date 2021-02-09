@@ -7,5 +7,16 @@ def warning(message) {
 }
 
 def terraform(message) {
-  echo "Nothing : ${message}"
+  pipeline {
+    agent any
+
+    stages {
+
+      stage('Shared Library Demo') {
+        steps {
+          sh 'echo Hello world'
+        }
+      }
+    }
+  }
 }
