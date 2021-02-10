@@ -5,13 +5,13 @@ pipeline {
 
     stage('VPC') {
       steps {
-        sh 'sleep 20'
+        build job: 'Terraform-Releases/VPC', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
       }
     }
 
     stage('Frontend') {
       steps {
-        sh 'sleep 20'
+        build job: 'Terraform-Releases/FRONTEND', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
       }
     }
 
@@ -20,13 +20,13 @@ pipeline {
 
         stage('ALB') {
           steps {
-            sh 'sleep 10'
+            build job: 'Terraform-Releases/ALB', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
           }
         }
 
         stage('Databases') {
           steps {
-            sh 'sleep 10'
+            build job: 'Terraform-Releases/DATABASES', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
           }
         }
 
@@ -38,31 +38,31 @@ pipeline {
 
         stage('Cart') {
           steps {
-            sh 'sleep 10'
+            build job: 'Terraform-Releases/CART', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
           }
         }
 
         stage('Catalogue') {
           steps {
-            sh 'sleep 10'
+            build job: 'Terraform-Releases/CATALOGUE', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
           }
         }
 
         stage('User') {
           steps {
-            sh 'sleep 10'
+            build job: 'Terraform-Releases/USER', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
           }
         }
 
         stage('Shipping') {
           steps {
-            sh 'sleep 10'
+            build job: 'Terraform-Releases/SHIPPING', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
           }
         }
 
         stage('Payment') {
           steps {
-            sh 'sleep 10'
+            build job: 'Terraform-Releases/PAYMENT', parameters: [string(name: 'ENVIRONMENT', value: 'dev')]
           }
         }
 
